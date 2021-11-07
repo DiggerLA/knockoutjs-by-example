@@ -17,9 +17,9 @@
         </div>
       
         <div class="field">
-          <label class="label" for="">Input</label>
+          <label class="label" for="input">Input</label>
           <div class="control has-icons-left">
-            <input class="input is-primary" type="text" placeholder="Enter text"
+            <input class="input is-primary" id="input" type="text" placeholder="Enter text"
               data-bind=" textInput: model.name">
             <span class="icon is-small is-left">
               <i class="fas fa-bowling-ball"></i>
