@@ -1,6 +1,6 @@
 /* Module TodoList */
 
-const TodoList = (function () {
+var TodoList = (function () {
   
   var States = {
     NEW: 'new',
@@ -10,8 +10,7 @@ const TodoList = (function () {
   var task = {
     name: ko.observable(),
     description: ko.observable(),
-    // status: States.NEW,
-    priority: ko.observable(1),
+    priority: ko.observable(),
   };
   
   var tasks = ko.observableArray();  
@@ -28,8 +27,8 @@ const TodoList = (function () {
   };
     
   var clearTask = function () {
-    task.name(null);
-    task.description(null);
+    task.name('');
+    task.description('');
     task.priority(1);
   };
   
@@ -38,21 +37,20 @@ const TodoList = (function () {
     tasks.remove(task);
   };
   
-  var completeTask = (task, /*event*/) => {   
+  var completeTask = function (task, /*event*/) {   
     task.status(States.COMPLETE);
     console.log(`Complete task with name: ${task.name}, status: ${task.status()}`);
   };
   
-  var sortByPriority = function (todolist) {
+  var sortByPriority = function () {
     console.log('Sorting tasks by priority');   
-    tasks.sort(function (l , r) {
+    tasks.sort(function (l, r) {
       if (l.priority == r.priority) 
         return 0;
       else if (l.priority < r.priority)
         return -1;
       else
-        return 1;           
-      // return (l.priority == r.priority) ? 0 : ((l.priority < r.priority) ? -1 : 1);
+        return 1;                 
     });
   };
   
@@ -90,3 +88,4 @@ const TodoList = (function () {
     numOfCompletedTasks,
   };
 })();
+

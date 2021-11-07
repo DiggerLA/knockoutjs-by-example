@@ -16,15 +16,8 @@ class TodoList {
       COMPLETE: 'complete',
     };
     this.tasks = ko.observableArray();  
-    this.numOfCompletedTasks = ko.computed(() => {
-      let completedTasks = [];
-      for (let i = 0; i < this.tasks().length; i++) {
-        var task = this.tasks()[i];
-        if (task.status() == this.states.COMPLETE) {
-          completedTasks.push(task);
-        }
-      }        
-      // var completedTasks = ko.utils.arrayFilter(this.tasks(), task => task.status() == this.states.COMPLETE);
+    this.numOfCompletedTasks = ko.computed(() => {         
+      let completedTasks = ko.utils.arrayFilter(this.tasks(), task => task.status() == this.states.COMPLETE);
       return completedTasks.length;
     });
     this.completeTask = this.completeTask.bind(this);

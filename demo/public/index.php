@@ -39,7 +39,7 @@
         
   </div>
       
-  <script src="js/knockout.js"></script>  
   <script src="js/jquery.js"></script>
+  <script src="js/knockout.js"></script>    
   <script src="js/demo.js"></script>
 </body>
