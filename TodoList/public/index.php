@@ -96,7 +96,7 @@
               <td data-bind="text: priority"></td>
               <td>
                 <button class="button is-success is-small is-rounded mb-1"
-                  data-bind="click: $parent.completeTask, visible: status() != 'complete'">
+                  data-bind="click: TodoList.completeTask, visible: status() != 'complete'">
                   Complete
                 </button>
                 <button class="button is-danger is-small is-rounded" 
